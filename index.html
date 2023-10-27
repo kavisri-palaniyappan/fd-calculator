@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD-CALCULATOR</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right, skyblue,  grey);
+        }
+        #calculate-button{
+            background-color:aquamarine;
+            color:#333;
+            /* font-size: large; */
+            margin-top: 30px;
+            padding: 10px 20px;
+            
+        }
+        #text{
+            width: 50%;
+            border: 1px solid #333;
+            padding: 10px;
+            border-color: none;
+           
+        }
+        #result{
+            font-size: 30px;
+            margin-top: 10px;
+            color: rgb(28, 25, 25);
+        }
+    </style>
+    <script>
+        function fdRate(){
+            const months=Number(document.getElementById("text").value);
+            let rate=0;
+            if(months<3)rate=5.8;
+            else if(months>=3 && months<=6) rate=6.5;
+            else if(months>=7 && months<=9) rate=6.8;
+            else rate=7;
+            let result=document.querySelector("#result");
+            result.innerHTML="Your interest rate is"+rate+"%";
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; background-color:blueviolet; width: 700px; margin-left: 350px; height: 500px; margin-top: 90px;">
+        <h1 style="padding-top: 100px; color:black; font-style:normal;">FD CALCULATOR</h1>
+        <div>
+        <input type="text" id="text">
+    </div>
+    <div>
+        <button id="calculate-button" onclick="fdRate()">CALCULATE</button>
+    </div>
+    <div id="result">Your intrest rate is</div>
+    </div>
+</body>
+</html>
